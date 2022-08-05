@@ -9,7 +9,7 @@ export class TeacherController {
 
     @Get("/:teacherId")
     getTeacherById(){
-        return "Get teacher by id"
+        return "Get Teacher by id"
     }
 
 
