@@ -36,6 +36,7 @@ export class StudentService {
                     id:studentId,
                     ...payload
                 } 
+                return updateStudent
             }
             else return student
         })
@@ -64,6 +65,7 @@ export class StudentService {
                     ...student,
                     teacher:teacherId
                 } 
+                return updateStudent
             }
             else return student
         })
