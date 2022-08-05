@@ -1,18 +1,23 @@
-import { Controller, Get, Post, Put } from '@nestjs/common';
+import { Controller, Get, Param, Post, Put } from '@nestjs/common';
 
 @Controller('teachers/:teacherId/students')
 export class StudentTeacherController {
    
     @Get()
-    getStudents()
+    getStudents(
+        @Param('teacherId') teacherId:string
+    )
     {
-        return 'Get all students that belong to a teacher'
+        return `Get all students that belong to a teacher with id ${teacherId}`
     }
 
     @Put('/:studentId')
-    updateStudentTeacher()
+    updateStudentTeacher(
+        @Param('teacherId') teacherId:string,
+        @Param('studentId') studentId:string
+    )
     {
-          return "Update Student Teacher"
+          return `Update Student having id ${studentId} Teacher having id ${teacherId}`
     }
 
 }
